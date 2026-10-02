@@ -6,7 +6,7 @@
 
     <groupId>io.github.tuxnoob</groupId>
     <artifactId>smallpict-java</artifactId>
-    <version>0.0.3</version>
+    <version>0.0.5</version>
     <packaging>jar</packaging>
 
     <name>SmallPict Java SDK</name>
