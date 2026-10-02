@@ -15,6 +15,7 @@ class ModelsTest {
                 .quality(85)
                 .maxWidth(1920)
                 .maxHeight(1080)
+                .maxDimension(1600)
                 .fit(FitMode.CONTAIN)
                 .lossless(false)
                 .stripMetadata(true)
@@ -26,6 +27,8 @@ class ModelsTest {
         assertEquals(ImageFormat.AVIF, options.getFormat());
         assertEquals(85, options.getQuality());
         assertEquals(1920, options.getMaxWidth());
+        assertEquals(1080, options.getMaxHeight());
+        assertEquals(1600, options.getMaxDimension());
         assertEquals(FitMode.CONTAIN, options.getFit());
         assertEquals("banner.png", options.getFilename());
         assertEquals("idemp_123", options.getIdempotencyKey());
@@ -33,6 +36,7 @@ class ModelsTest {
         String json = mapper.writeValueAsString(options);
         assertTrue(json.contains("\"format\":\"avif\""));
         assertTrue(json.contains("\"quality\":85"));
+        assertTrue(json.contains("\"max_dimension\":1600"));
         assertFalse(json.contains("idempotencyKey")); // ignored in json body
     }
 

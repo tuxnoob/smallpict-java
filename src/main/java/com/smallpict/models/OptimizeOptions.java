@@ -12,6 +12,8 @@ public class OptimizeOptions {
     private final Integer maxWidth;
     @JsonProperty("max_height")
     private final Integer maxHeight;
+    @JsonProperty("max_dimension")
+    private final Integer maxDimension;
     private final FitMode fit;
     private final Boolean lossless;
     @JsonProperty("strip_metadata")
@@ -27,6 +29,7 @@ public class OptimizeOptions {
         this.quality = builder.quality;
         this.maxWidth = builder.maxWidth;
         this.maxHeight = builder.maxHeight;
+        this.maxDimension = builder.maxDimension;
         this.fit = builder.fit;
         this.lossless = builder.lossless;
         this.stripMetadata = builder.stripMetadata;
@@ -53,6 +56,10 @@ public class OptimizeOptions {
 
     public Integer getMaxHeight() {
         return maxHeight;
+    }
+
+    public Integer getMaxDimension() {
+        return maxDimension;
     }
 
     public FitMode getFit() {
@@ -88,6 +95,7 @@ public class OptimizeOptions {
         private Integer quality = 80;
         private Integer maxWidth;
         private Integer maxHeight;
+        private Integer maxDimension;
         private FitMode fit = FitMode.COVER;
         private Boolean lossless = false;
         private boolean stripMetadata = true;
@@ -112,6 +120,11 @@ public class OptimizeOptions {
 
         public Builder maxHeight(int maxHeight) {
             this.maxHeight = maxHeight;
+            return this;
+        }
+
+        public Builder maxDimension(int maxDimension) {
+            this.maxDimension = maxDimension;
             return this;
         }
 
